@@ -37,8 +37,8 @@
 			<div class="slides">
 				<section>
 					<h2>Summer 2019 IQT</h2>
-					<h3>Hope Tambala</h3>
-					<h4>Cyber Reboot</h4>
+					<h3 class="fragment">Hope Tambala</h3>
+					<h5 ><span class="fragment grow">Cyber Reboot</span></h5>
 				</section>
 				<section>
 					<section>Projects</section>
@@ -49,7 +49,10 @@
 				<section data-transition="convcave" data-background="images/crviz_intro.gif"></section>
 				<section data-transition="convex" class="crviz">
 					<section>What'd I Do</section>
-					<section>Design Scope Report</section>
+					<section>
+						Design Scope Report
+						<img height="400px"width="auto" src="images/cr_designscope.gif">
+					</section>
 					<section>
 						Previous Implementation
 						<img height="400px"width="auto" src="images/0_tooltip.gif">
@@ -68,7 +71,27 @@
 						React UI
 						<img height="500px"width="auto" src="images/pkt_cafe.gif">
 					</section>
-					<section>API Development</section>
+					<section>
+						API Development
+						<pre>
+							<code class="hljs" data-trim data-line-numbers="4,8-11">
+								import React, { useState } from 'react';
+								
+								function Example() {
+								  const [count, setCount] = useState(0);
+								
+								  return (
+									&lt;div&gt;
+									  &lt;p&gt;You clicked {count} times&lt;/p&gt;
+									  &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+										Click me
+									  &lt;/button&gt;
+									&lt;/div&gt;
+								  );
+								}
+							</code>
+						</pre>
+					</section>
 				</section>
 				<section data-transition="convex">Explainable Artificial Intelligence</section>
 				<section class="xai">
