@@ -35,10 +35,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
 				<section>
 					<h2>Summer 2019 IQT</h2>
-					<h3 class="fragment">Hope Tambala</h3>
-					<h5 ><span class="fragment grow">Cyber Reboot</span></h5>
+					<div class="fragment">
+						<h3 >Hope Tambala</h3>
+						<h5 class="fragment grow highlight-red">Cyber Reboot</h5>
+					</div>
 				</section>
 				<section>
 					<section>Projects</section>
@@ -46,17 +49,19 @@
 					<section>Packet Cafe</section>
 					<section>Explainable AI</section>
 				</section>
+
 				<section data-transition="convcave" data-background="images/crviz_intro.gif"></section>
 				<section data-transition="convex" class="crviz">
+					<section>
+						Previous Implementation
+						<img height="400px"width="auto" src="images/0_tooltip.gif">
+					</section>
 					<section>What'd I Do</section>
 					<section>
 						Design Scope Report
 						<img height="400px"width="auto" src="images/cr_designscope.gif">
 					</section>
-					<section>
-						Previous Implementation
-						<img height="400px"width="auto" src="images/0_tooltip.gif">
-					</section>
+					
 					<section>Comparative Evaluation</section>
 					<section>
 						Low-Fidelity Mockups
@@ -64,6 +69,7 @@
 					</section>
 					<section>Finished Product</section>
 				</section>
+
 				<section data-transition="concave">Packet Cafe</section>
 				<section class="packetcafe">
 					<section>What'd I Do</section>
@@ -74,33 +80,72 @@
 					<section>
 						API Development
 						<pre>
-							<code class="hljs" data-trim data-line-numbers="4,8-11">
-								import React, { useState } from 'react';
-								
-								function Example() {
-								  const [count, setCount] = useState(0);
-								
-								  return (
-									&lt;div&gt;
-									  &lt;p&gt;You clicked {count} times&lt;/p&gt;
-									  &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
-										Click me
-									  &lt;/button&gt;
-									&lt;/div&gt;
-								  );
-								}
+							<code class="hljs" data-trim data-line-numbers="1,9,11, 5-18">
+								class Upload(object):
+
+								def on_post(self, req, resp):
+							
+									# Retrieve input_file
+									input_file = req.get_param('file')
+							
+									# Test if the file was uploaded
+									if input_file.filename:
+										# Retrieve filename
+										filename = input_file.filename
+
+										# Define file_path
+										file_path = os.path.join(self._storage_path, filename)
+							
+										# Write to a temporary file to prevent incomplete files from being used
+										temp_file_path = file_path + '~'
+							
+										open(temp_file_path, 'wb').write(input_file.file.read())
+							
+										# know the file has been  saved to disk, move it into place.
+										os.rename(temp_file_path, file_path)
+									else:
+										print("Error")
+							
+									resp.status = falcon.HTTP_201
 							</code>
 						</pre>
+						<p class="fragment">*initial commits</p>
 					</section>
 				</section>
+
 				<section data-transition="convex">Explainable Artificial Intelligence</section>
 				<section class="xai">
 					<section>What'd I Do</section>
 					<section>Background Research</section>
 					<section>Comparative Evaluation</section>
 				</section>
-				<section data-transition="concave">Skills I Have Seen</section>
+
+				<section data-transition="concave">Skills I've Learned</section>
+				<section data-transition="concave">
+					Skills I've Learned
+					<section>
+						DevOps for Open-Source Software
+						<p>Continuous Integration: Codacy,Travis, Code Coverage</p>
+					</section>
+					<section>
+						Frontend Development
+						<p>React, Redux, d3</p>
+					</section>
+					<section>
+						Translation from Design to Development
+						<p class="fragment">Mockups to <span class="fragment">code</span></p>
+					</section>
+				</section>
+
 				<section data-transition="convex">Impact on Future Career</section>
+				<section>
+					<section>
+						Cybersecurity Visualization
+					</section>
+					<section>
+						UX Research and Design Patterns in XAI
+					</section>
+				</section>
 			</div>
 		</div>
 
