@@ -35,7 +35,6 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-
 				<section>
 					<h2>Summer 2019 IQT</h2>
 					<div class="fragment">
@@ -50,8 +49,6 @@
 						<p class="fragment">Packet Cafe</p>
 						<p class="fragment">Explainable AI</p>
 					</section>
-
-					
 				</section>
 
 				<section data-transition="convcave" data-background="images/crviz_intro.gif"></section>
@@ -66,7 +63,10 @@
 						<img height="400px"width="auto" src="images/cr_designscope.gif">
 					</section>
 					
-					<section>Comparative Evaluation</section>
+					<section>
+						Comparative Evaluation
+						<img height="500px"width="auto" src="images/crviz_compare.gif">
+					</section>
 					<section>
 						Low-Fidelity Mockups
 						<img height="500px"width="auto" src="images/lowfi_demo.gif">
@@ -91,30 +91,29 @@
 							<code class="hljs" data-trim data-line-numbers="1,9,11, 5-18">
 								class Upload(object):
 
-								def on_post(self, req, resp):
-							
-									# Retrieve input_file
-									input_file = req.get_param('file')
-							
-									# Test if the file was uploaded
-									if input_file.filename:
-										# Retrieve filename
-										filename = input_file.filename
+									def on_post(self, req, resp):
+										# Retrieve input_file
+										input_file = req.get_param('file')
+								
+										# Test if the file was uploaded
+										if input_file.filename:
+											# Retrieve filename
+											filename = input_file.filename
 
-										# Define file_path
-										file_path = os.path.join(self._storage_path, filename)
-							
-										# Write to a temporary file to prevent incomplete files from being used
-										temp_file_path = file_path + '~'
-							
-										open(temp_file_path, 'wb').write(input_file.file.read())
-							
-										# know the file has been  saved to disk, move it into place.
-										os.rename(temp_file_path, file_path)
-									else:
-										print("Error")
-							
-									resp.status = falcon.HTTP_201
+											# Define file_path
+											file_path = os.path.join(self._storage_path, filename)
+								
+											# Write to a temporary file to prevent incomplete files from being used
+											temp_file_path = file_path + '~'
+								
+											open(temp_file_path, 'wb').write(input_file.file.read())
+								
+											# know the file has been  saved to disk, move it into place.
+											os.rename(temp_file_path, file_path)
+										else:
+											print("Error")
+								
+										resp.status = falcon.HTTP_201
 							</code>
 						</pre>
 						<p class="fragment">*initial commits</p>
@@ -124,8 +123,50 @@
 				<section data-transition="convex">Explainable Artificial Intelligence</section>
 				<section class="xai">
 					<section>What'd I Do</section>
-					<section>Background Research</section>
-					<section>Comparative Evaluation</section>
+					<section>
+						Contextual Enquiry
+						<p class="fragment">Parts of the machine mearning model lifecycle, where bias can be introduced </p>
+					</section>
+					<section>
+						Where bias can be introduced: 
+						<p class="fragment">How we review data</p>
+						<p class="fragment">How we build our models</p>
+						<p class="fragment">How we integrate our models into a practice</p>
+					</section>
+					<section>
+						Potential user groups/stakeholders for XAI products:
+						<p class="fragment">Data Scientists (MLOps)</p>
+						<p class="fragment">“Ethicists”</p>
+						<p class="fragment">End-Users</p>
+					</section>
+					<section>
+						Actual XAI products:
+						<p class="fragment">IBM's AI Fairness, Amazon's Neo-AI, Microsoft Interpretable ML etc</p>
+						<p class="fragment">Dr.Why.AI, Yellowbrick, ELI5</p>
+					</section>
+						
+					
+					<section>
+						End Goal?
+						<p class="fragment">Make recommendations for new products in the XAI space</p>
+					</section>
+					<section>
+						better system/product for reviewing data
+						<p class="fragment">For end-users, ethicists to understand?</p>
+						<p class="fragment">For data Scientists to speed up data cleaning but fairness aware?</p>
+					</section>  
+					<section>
+						A better system/product for collecting feedback from the effects of AI-products
+					</section>  
+
+					<section>
+						better system/product for estimating the cost of errors such as the social impacts
+					 </section> 
+					<section>
+						better system/product for collecting feedback from the effects of AI-products 
+						<p class="fragment">And re-evaluation, revisioning, and updating models</p>
+					</section>
+
 				</section>
 
 				<section data-transition="concave">Skills I've Learned</section>
@@ -133,11 +174,11 @@
 					Skills I've Learned
 					<section>
 						DevOps for Open-Source Software
-						<p>Continuous Integration: Codacy,Travis, Code Coverage</p>
+						<p class="fragment">Continuous Integration: Codacy,Travis, Code Coverage</p>
 					</section>
 					<section>
-						Frontend Development
-						<p>React, Redux, d3</p>
+						Frontend Development for Cybersecurity Visualization
+						<p class="fragment">React, Redux, d3</p>
 					</section>
 					<section>
 						Translation from Design to Development
@@ -146,13 +187,18 @@
 				</section>
 
 				<section data-transition="convex">Impact on Future Career</section>
-				<section>
+				<section data-transition="convex">
 					<section>
-						Cybersecurity Visualization
+						Cybersecurity + UX/Visualization = <span class="fragment">cool</span>
 					</section>
 					<section>
-						UX Research and Design Patterns in XAI
+						UX + AI <span class="fragment">= cool</span>
+						<p class="fragment">Human-AI Interaction</p>
+						<p class="fragment">Computational Human-Computer Interaction</p>
 					</section>
+				</section>
+				<section data-transition="concave">
+					Yep.
 				</section>
 			</div>
 		</div>
